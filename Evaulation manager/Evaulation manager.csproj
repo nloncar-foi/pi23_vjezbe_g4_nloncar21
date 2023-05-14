@@ -9,4 +9,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="DBLayer">
+      <HintPath>DLLs\DBLayer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
