@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            txtUsername = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            txtPassword = new TextBox();
+            btnLogin = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // txtUsername
             // 
-            textBox1.Location = new Point(205, 52);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(203, 27);
-            textBox1.TabIndex = 0;
+            txtUsername.Location = new Point(205, 52);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(203, 27);
+            txtUsername.TabIndex = 0;
             // 
             // label1
             // 
@@ -59,36 +59,35 @@
             label2.Size = new Size(62, 20);
             label2.TabIndex = 3;
             label2.Text = "Lozinka:";
-            label2.Click += label2_Click;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(205, 106);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(203, 27);
-            textBox2.TabIndex = 2;
-            textBox2.UseSystemPasswordChar = true;
-            textBox2.TextChanged += textBox2_TextChanged;
+            txtPassword.Location = new Point(205, 106);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(203, 27);
+            txtPassword.TabIndex = 2;
+            txtPassword.UseSystemPasswordChar = true;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.Location = new Point(301, 185);
-            button1.Name = "button1";
-            button1.Size = new Size(136, 45);
-            button1.TabIndex = 4;
-            button1.Text = "Prijava";
-            button1.UseVisualStyleBackColor = true;
+            btnLogin.Location = new Point(301, 185);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(136, 45);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "Prijava";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(497, 293);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(label2);
-            Controls.Add(textBox2);
+            Controls.Add(txtPassword);
             Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsername);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             MinimizeBox = false;
@@ -101,10 +100,10 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private TextBox txtUsername;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
-        private Button button1;
+        private TextBox txtPassword;
+        private Button btnLogin;
     }
 }
