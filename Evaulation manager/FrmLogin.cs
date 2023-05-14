@@ -32,8 +32,11 @@ namespace Evaulation_manager
             {
                 if(txtUsername.Text==username && txtPassword.Text==password)
                 {
-                    MessageBox.Show("Dobrodošli!", "Prijavljeni ste",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FrmStudents frmStudents = new FrmStudents();
+                    Hide();
+                    frmStudents.ShowDialog();
+                    //ako je show, mogu se koristiti obadvije forme
+                    Close();
                 }
                 else
                 {
