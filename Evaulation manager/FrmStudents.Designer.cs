@@ -29,24 +29,36 @@
         private void InitializeComponent()
         {
             dgvStudents = new DataGridView();
+            btnEvaluateStudent = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvStudents).BeginInit();
             SuspendLayout();
             // 
             // dgvStudents
             // 
             dgvStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStudents.Location = new Point(39, 69);
+            dgvStudents.Location = new Point(35, 31);
             dgvStudents.Name = "dgvStudents";
             dgvStudents.RowHeadersWidth = 51;
             dgvStudents.RowTemplate.Height = 29;
             dgvStudents.Size = new Size(728, 326);
             dgvStudents.TabIndex = 0;
             // 
+            // btnEvaluateStudent
+            // 
+            btnEvaluateStudent.Location = new Point(562, 387);
+            btnEvaluateStudent.Name = "btnEvaluateStudent";
+            btnEvaluateStudent.Size = new Size(182, 46);
+            btnEvaluateStudent.TabIndex = 1;
+            btnEvaluateStudent.Text = "Evauliraj studenta";
+            btnEvaluateStudent.UseVisualStyleBackColor = true;
+            btnEvaluateStudent.Click += btnEvaluateStudent_Click;
+            // 
             // FrmStudents
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnEvaluateStudent);
             Controls.Add(dgvStudents);
             Name = "FrmStudents";
             Text = "FrmStudents";
@@ -58,5 +70,6 @@
         #endregion
 
         private DataGridView dgvStudents;
+        private Button btnEvaluateStudent;
     }
 }

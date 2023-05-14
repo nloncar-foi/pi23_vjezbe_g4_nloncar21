@@ -54,6 +54,7 @@
             cboActivities.Name = "cboActivities";
             cboActivities.Size = new Size(203, 28);
             cboActivities.TabIndex = 0;
+            cboActivities.SelectedIndexChanged += cboActivities_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -174,6 +175,7 @@
             btnCancel.TabIndex = 14;
             btnCancel.Text = "Odustani";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // FrmEvaluation
             // 
@@ -197,6 +199,7 @@
             Controls.Add(cboActivities);
             Name = "FrmEvaluation";
             Text = "FrmEvaluation";
+            Load += FrmEvaluation_Load;
             ((System.ComponentModel.ISupportInitialize)numPoints).EndInit();
             ResumeLayout(false);
             PerformLayout();
