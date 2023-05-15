@@ -16,7 +16,7 @@ namespace Evaulation_manager
     {
         private Student student;
 
-        public Student SelectedStudent { get => student; set=> student=value; }
+        public Student SelectedStudent { get => student; set => student = value; }
 
         public FrmEvaluation(Student selectedStudent)
         {
@@ -49,8 +49,8 @@ namespace Evaulation_manager
             numPoints.Maximum = currentActivity.MaxPoints;
 
             var evaluation = EvaluationRepository.GetEvaluation(SelectedStudent, currentActivity);
-            
-            if(evaluation != null)
+
+            if (evaluation != null)
             {
                 txtTeacher.Text = evaluation.Evaluator.ToString();
 
@@ -60,7 +60,7 @@ namespace Evaulation_manager
             }
             else
             {
-                txtTeacher.Text=FrmLogin.LoggedTeacher.ToString();
+                txtTeacher.Text = FrmLogin.LoggedTeacher.ToString();
                 txtEvaulationDate.Text = "-";
                 numPoints.Value = 0;
             }
@@ -68,6 +68,18 @@ namespace Evaulation_manager
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var activity = cboActivities.SelectedItem as Activity;
+
+            var teacher = FrmLogin.LoggedTeacher;
+
+            int points=(int)numPoints.Value;
+
+            teacher.PerformEvaluation(SelectedStudent,activity, points);
             Close();
         }
     }

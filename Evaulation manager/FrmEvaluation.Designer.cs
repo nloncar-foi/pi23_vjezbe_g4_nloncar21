@@ -166,6 +166,7 @@
             btnSave.TabIndex = 13;
             btnSave.Text = "Spremi";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // btnCancel
             // 
