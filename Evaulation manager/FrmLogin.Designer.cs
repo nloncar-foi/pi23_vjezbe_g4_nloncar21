@@ -94,6 +94,7 @@
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Prijava";
+            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

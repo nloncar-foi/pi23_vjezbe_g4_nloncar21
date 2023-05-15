@@ -1,9 +1,14 @@
+using Evaulation_manager.Models;
+using Evaulation_manager.Repositories;
+
 namespace Evaulation_manager
 {
     public partial class FrmLogin : Form
     {
-        string username = "nastavnik";
-        string password = "test";
+        //string username = "nastavnik";
+        //string password = "test";
+
+        public static Teacher LoggedTeacher { get; set; }
         public FrmLogin()
         {
             InitializeComponent();
@@ -11,7 +16,7 @@ namespace Evaulation_manager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text=="" && txtPassword.Text == "")
+            if (txtUsername.Text == "" && txtPassword.Text == "")
             {
                 MessageBox.Show("Korisinièko ime i lozinka nisu uneseni!", "Problem", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
@@ -30,7 +35,9 @@ namespace Evaulation_manager
             }
             else
             {
-                if(txtUsername.Text==username && txtPassword.Text==password)
+                LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
+
+                if (LoggedTeacher!=null && LoggedTeacher.CheckPassword(txtPassword.Text))
                 {
                     FrmStudents frmStudents = new FrmStudents();
                     Hide();
@@ -44,6 +51,11 @@ namespace Evaulation_manager
                     MessageBoxIcon.Error);
                 }
             }
+
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
 
         }
     }
