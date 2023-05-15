@@ -14,7 +14,7 @@ namespace Evaulation_manager.Models
 
         public Teacher Evaluator { get; set; }
 
-        public DateTime EvaulationDate { get; set; }
+        public DateTime EvaluationDate { get; set; }
 
         public int Points { get; set; }
 
