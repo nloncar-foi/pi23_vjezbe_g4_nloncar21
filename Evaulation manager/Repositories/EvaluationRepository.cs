@@ -66,5 +66,20 @@ namespace Evaulation_manager.Repositories
             return evaluation;
         }
 
+        public static void InsertEvaluation(Student student, Activity activity, Teacher teacher, int points){
+
+            string sql = $"INSERT INTO Evaluations (IdActivities, IdStudents, IdTeachers, EvaluationDate, Points) VALUES({activity.Id}, {student.Id}, {teacher.Id}, GETDATE(),"; //mozda neje dovršeno
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+           }
+
+        public static void UpdateEvaluation(Evaluation evaluation,  Teacher teacher, int points){
+
+            string sql = $"UPADTE Evaluation SET IdTeachers = {teacher.Id}, Points={points}, EvaluationDate = GETDATE() WHERE IdActivities = {evaluation.Activity.Id} AND IdStudents={evaluation.Student.Id}";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
     }
 }
