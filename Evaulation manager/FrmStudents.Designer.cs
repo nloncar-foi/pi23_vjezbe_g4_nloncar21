@@ -30,6 +30,7 @@
         {
             dgvStudents = new DataGridView();
             btnEvaluateStudent = new Button();
+            btnGenerateReport = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvStudents).BeginInit();
             SuspendLayout();
             // 
@@ -53,11 +54,22 @@
             btnEvaluateStudent.UseVisualStyleBackColor = true;
             btnEvaluateStudent.Click += btnEvaluateStudent_Click;
             // 
+            // btnGenerateReport
+            // 
+            btnGenerateReport.Location = new Point(44, 387);
+            btnGenerateReport.Name = "btnGenerateReport";
+            btnGenerateReport.Size = new Size(176, 34);
+            btnGenerateReport.TabIndex = 2;
+            btnGenerateReport.Text = "Generiraj izvještaj";
+            btnGenerateReport.UseVisualStyleBackColor = true;
+            btnGenerateReport.Click += btnGenerateReport_Click;
+            // 
             // FrmStudents
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnGenerateReport);
             Controls.Add(btnEvaluateStudent);
             Controls.Add(dgvStudents);
             Name = "FrmStudents";
@@ -71,5 +83,6 @@
 
         private DataGridView dgvStudents;
         private Button btnEvaluateStudent;
+        private Button btnGenerateReport;
     }
 }

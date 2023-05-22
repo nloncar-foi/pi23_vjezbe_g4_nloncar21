@@ -35,7 +35,7 @@ namespace Evaulation_manager.Models
             FirstName = student.FirstName;
             LastName = student.LastName;
 
-            HasSignature = student.HasSignature() == true ? "DA" : "NE"
+            HasSignature = student.HasSignature() == true ? "DA" : "NE";
 
             HasGrade = student.HasGrade() == true ? "DA" : "NE";
 
